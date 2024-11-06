@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" src="/stylesheets/style.css" />
+  </head>
+  <body class="bg-gray-100 justify-center items-center h-screen">
+    <header class="bg-white shadow-md p-4">
+      <div class="container mx-auto flex justify-between items-center">
+        <!-- Logo -->
+        <h1 class="text-2xl font-bold text-red-500">Pinterest</h1>
+        <!-- Search Bar -->
+        <div class="flex-grow mx-4">
+          <input
+            type="text"
+            class="w-full border border-gray-200 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500"
+            placeholder="Search..."
+          />
+        </div>
+        <!-- User Profile -->
+        <div>
+          <a
+            href="/register"
+            class="bg-red-500 text-white px-4 py-2 rounded-md"
+          >
+            Sign In
+          </a>
+        </div>
+        <div>
+          <a
+            href="/login"
+            class="ml-5 bg-red-500 text-white px-4 py-2 rounded-md"
+          >
+            log In
+          </a>
+        </div>
+      </div>
+    </header>
+    <!-- Main Content -->
+    <main class="container mx-auto mt-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- Pin Cards -->
+        <div class="bg-white shadow-md rounded-md p-4">
+          <!-- Pin Image -->
+          <img
+            src="https://via.placeholder.com/300"
+            alt="Pin"
+            class="w-full rounded-md mb-2"
+          />
+          <!-- Pin Title -->
+          <h2 class="text-lg font-semibold mb-1">Pin Title</h2>
+          <!-- Pin Description -->
+          <p class="text-gray-600">Pin description goes here...</p>
+          <!-- Pin Meta -->
+          <div class="flex items-center mt-2">
+            <!-- User Avatar -->
+            <img
+              src="https://via.placeholder.com/40"
+              alt="User Avatar"
+              class="w-8 h-8 rounded-full"
+            />
+            <!-- Username -->
+            <p class="text-gray-700 ml-2">Username</p>
+          </div>
+        </div>
+        <!-- Repeat this card structure for other pins -->
+      </div>
+    </main>
+  </body>
+</html>

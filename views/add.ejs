@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Page</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS -->
+    <style>
+      /* Add any custom styles here */
+    </style>
+  </head>
+
+  <body class="bg-gray-100">
+    <% if(nav === true){%>
+    <!-- Header -->
+    <header class="bg-white shadow-md p-4">
+      <div class="container mx-auto flex justify-between items-center">
+        <!-- Logo -->
+        <h1 class="text-2xl font-bold text-red-500">Pinterest</h1>
+        <!-- Navigation -->
+        <nav>
+          <ul class="flex space-x-4">
+            <li>
+              <a href="#" class="text-gray-600 hover:text-gray-900">Home</a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-600 hover:text-gray-900"
+                >Following</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-gray-600 hover:text-gray-900">Likes</a>
+            </li>
+            <!-- Add more navigation links as needed -->
+          </ul>
+        </nav>
+        <!-- User Profile -->
+        <div>
+          <a href="/logout" class="bg-red-500 text-white px-4 py-2 rounded-md">
+            Sign Out
+          </a>
+        </div>
+      </div>
+    </header>
+    <% } %>
+
+    <!-- Main Content -->
+    <!-- Main Content -->
+    <main class="container mx-auto mt-4">
+      <!-- Pin Upload Form -->
+      <div class="bg-white shadow-md rounded-md p-8 max-w-lg mx-auto">
+        <h2 class="text-2xl font-semibold mb-4">Upload Pin</h2>
+        <!-- Pin Upload Form -->
+        <form action="/createpost" method="post" enctype="multipart/form-data">
+          <!-- Pin Image -->
+          <div class="mb-4">
+            <label
+              for="pinImage"
+              class="block text-sm font-medium text-gray-700"
+              >Pin Image</label
+            >
+            <input
+              type="file"
+              id="pinImage"
+              name="pinImage"
+              accept="image/*"
+              class="mt-1 focus:ring-red-500 focus:border-red-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+            />
+          </div>
+          <!-- Pin Title -->
+          <div class="mb-4">
+            <label
+              for="pinTitle"
+              class="block text-sm font-medium text-gray-700"
+              >Pin Title</label
+            >
+            <input
+              type="text"
+              id="pinTitle"
+              name="pinTitle"
+              class="mt-1 focus:ring-red-500 focus:border-red-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+            />
+          </div>
+          <!-- Pin Description -->
+          <div class="mb-4">
+            <label
+              for="pinDescription"
+              class="block text-sm font-medium text-gray-700"
+              >Pin Description</label
+            >
+            <textarea
+              id="pinDescription"
+              name="pinDescription"
+              rows="3"
+              class="mt-1 focus:ring-red-500 focus:border-red-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+            ></textarea>
+          </div>
+          <!-- Submit Button -->
+          <div class="mb-4">
+            <button
+              type="submit"
+              class="inline-flex items-center px-4 py-2 bg-red-500 border border-transparent rounded-md font-semibold text-white hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+            >
+              Upload Pin
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

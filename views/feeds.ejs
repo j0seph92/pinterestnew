@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Page</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS -->
+    <style>
+      /* Add any custom styles here */
+    </style>
+  </head>
+
+  <body class="bg-gray-100">
+    <% if(nav === true){%>
+    <!-- Header -->
+    <header class="bg-white shadow-md p-4">
+      <div class="container mx-auto flex justify-between items-center">
+        <!-- Logo -->
+        <h1 class="text-2xl font-bold text-red-500">Pinterest</h1>
+        <!-- Navigation -->
+        <nav>
+          <ul class="flex space-x-4">
+            <li>
+              <a href="#" class="text-gray-600 hover:text-gray-900">Home</a>
+            </li>
+            <li>
+              <a href="/feeds" class="text-gray-600 hover:text-gray-900"
+                >Feeds</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-gray-600 hover:text-gray-900">Likes</a>
+            </li>
+            <!-- Add more navigation links as needed -->
+          </ul>
+        </nav>
+        <!-- User Profile -->
+        <div>
+          <a href="/logout" class="bg-red-500 text-white px-4 py-2 rounded-md">
+            Sign Out
+          </a>
+        </div>
+      </div>
+    </header>
+    <% } %>
+
+    <!-- Main Content -->
+    <main class="container mx-auto mt-4">
+      <!-- User's Pins -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+        <!-- Pin Cards -->
+        <% posts.forEach(function(post){ %>
+        <div class="bg-white shadow-md rounded-md p-4">
+          <!-- Pin Image -->
+          <img
+            src="/images/uploads/<%= post.pinImage %>"
+            alt="Pin"
+            class="w-full rounded-md mb-2"
+          />
+          <!-- Pin Title -->
+          <h2 class="text-lg font-semibold mb-1"><%= post.pinTitle %></h2>
+        </div>
+        <% }) %>
+        <!-- Repeat this card structure for other pins -->
+      </div>
+    </main>
+  </body>
+</html>
